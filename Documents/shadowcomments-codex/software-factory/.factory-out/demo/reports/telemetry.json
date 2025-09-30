@@ -1,0 +1,14 @@
+{
+  "project": "demo",
+  "reports": [
+    "build.json",
+    "docs.json",
+    "green.json",
+    "init.json",
+    "plan.json",
+    "red.json",
+    "verify.json"
+  ],
+  "openrouter_trace": null,
+  "perf_budget_ms": 1
+}
