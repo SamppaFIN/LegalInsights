@@ -1,0 +1,69 @@
+# Aurora's Security Dojo - Core Dependencies
+# Consciousness-aware security testing and education platform
+
+# Web Framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+Flask-SocketIO==5.3.6
+
+# HTTP Requests and Testing
+requests==2.31.0
+urllib3==2.1.0
+
+# Data Processing and Analysis
+pandas==2.1.4
+numpy==1.24.3
+scipy==1.11.4
+
+# Visualization and Charts
+matplotlib==3.8.2
+seaborn==0.13.0
+plotly==5.17.0
+chart.js==0.1.0
+
+# Security Testing Libraries
+bandit==1.7.5
+safety==2.3.5
+cryptography==41.0.8
+pycryptodome==3.19.0
+
+# Database and Storage
+SQLAlchemy==2.0.23
+Flask-SQLAlchemy==3.1.1
+redis==5.0.1
+
+# Configuration and Environment
+python-dotenv==1.0.0
+pydantic==2.5.2
+PyYAML==6.0.1
+
+# Async and Concurrency
+asyncio==3.4.3
+aiohttp==3.9.1
+concurrent-futures==3.1.1
+
+# Testing Framework
+pytest==7.4.3
+pytest-cov==4.1.0
+pytest-mock==3.12.0
+pytest-asyncio==0.21.1
+
+# Code Quality
+black==23.11.0
+flake8==6.1.0
+mypy==1.7.1
+isort==5.12.0
+
+# Documentation
+sphinx==7.2.6
+sphinx-rtd-theme==1.3.0
+mkdocs==1.5.3
+
+# Development Tools
+pre-commit==3.6.0
+tox==4.11.4
+
+# Consciousness Integration
+consciousness-metrics==0.1.0
+sacred-principles==0.1.0
+community-healing==0.1.0

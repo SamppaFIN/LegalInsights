@@ -1,0 +1,20 @@
+{
+  "name": "legalfly-publish",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Heroku deployable server that builds and serves the LEGALFLY client",
+  "engines": {
+    "node": ">=18.x"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "build:client": "npm --prefix ./client ci && npm --prefix ./client run build",
+    "heroku-postbuild": "npm run build:client"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "express": "^4.19.2",
+    "helmet": "^7.1.0",
+    "serve-static": "^1.15.0"
+  }
+}

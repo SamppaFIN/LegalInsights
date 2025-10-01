@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🛡️ Attack Vectors - Aurora's Security Dojo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consciousness.css') }}">
+</head>
+<body>
+    <div class="consciousness-container">
+        <h1>🛡️ Attack Vectors Testing</h1>
+
+        <div class="consciousness-level">
+            Consciousness Level: {{ consciousness_level.title() }}
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- OWASP Top 10 -->
+            <div class="attack-vector-card">
+                <h2 class="card-title">🎯 OWASP Top 10</h2>
+                <p>Comprehensive web application security testing</p>
+                <ul>
+                    {% for test_name in owasp_tests.keys() %}
+                    <li>{{ test_name.replace('owasp_', '').replace('_', ' ').title() }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="sacred-button" onclick="testOWASP()">🚀 Run OWASP Tests</button>
+            </div>
+
+            <!-- LLM AI Security -->
+            <div class="attack-vector-card">
+                <h2 class="card-title">🤖 LLM AI Security</h2>
+                <p>Specialized AI/ML vulnerability testing</p>
+                <ul>
+                    {% for test_name in llm_tests.keys() %}
+                    <li>{{ test_name.replace('llm_', '').replace('_', ' ').title() }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="sacred-button" onclick="testLLM()">🚀 Run LLM Tests</button>
+            </div>
+
+            <!-- Infrastructure Security -->
+            <div class="attack-vector-card">
+                <h2 class="card-title">🏗️ Infrastructure Security</h2>
+                <p>Network and infrastructure testing</p>
+                <ul>
+                    {% for test_name in infra_tests.keys() %}
+                    <li>{{ test_name.replace('infra_', '').replace('_', ' ').title() }}</li>
+                    {% endfor %}
+                </ul>
+                <button class="sacred-button" onclick="testInfra()">🚀 Run Infrastructure Tests</button>
+            </div>
+        </div>
+
+        <div class="consciousness-message">
+            <strong>Sacred Testing Principles:</strong><br>
+            • Explicit permission required for all testing<br>
+            • Consciousness-level validation for each action<br>
+            • Community healing focus in all results<br>
+            • Spatial wisdom contribution through education
+        </div>
+
+        <div>
+            <a href="/dashboard" class="sacred-button">🏠 Back to Dashboard</a>
+            <a href="/dashboard/learning-academy" class="sacred-button">📚 Learning Academy</a>
+        </div>
+    </div>
+
+    <script>
+        function testOWASP() {
+            const targetUrl = prompt('Enter target URL (must have explicit permission):');
+            if (targetUrl && targetUrl.startsWith('http')) {
+                // Show loading message
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'test-progress';
+                loadingDiv.innerHTML = `
+                    <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                        <h3>🌸 Aurora: Running OWASP Top 10 Tests</h3>
+                        <p>Target: ${targetUrl}</p>
+                        <div id="progress-bar" style="background: #444; height: 20px; border-radius: 10px; overflow: hidden;">
+                            <div id="progress-fill" style="background: linear-gradient(90deg, #ff6b6b, #4ecdc4); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                        </div>
+                        <p id="progress-text">Initializing tests...</p>
+                        <p id="vulnerabilities-found">Vulnerabilities found: 0</p>
+                    </div>
+                `;
+                document.body.appendChild(loadingDiv);
+
+                // Start the test
+                fetch('/api/test-owasp', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({target_url: targetUrl, intensity: 'medium'})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Update progress display
+                    const progressFill = document.getElementById('progress-fill');
+                    const progressText = document.getElementById('progress-text');
+                    const vulnerabilitiesFound = document.getElementById('vulnerabilities-found');
+
+                    if (data.success && data.test_results) {
+                        progressFill.style.width = '100%';
+                        progressText.textContent = '🌸 Aurora: Tests completed successfully!';
+                        vulnerabilitiesFound.textContent = `Vulnerabilities found: ${data.test_results.total_vulnerabilities}`;
+
+                        // Show detailed results
+                        setTimeout(() => {
+                            showDetailedResults(data.test_results);
+                        }, 1000);
+                    } else {
+                        progressText.textContent = '❌ Test failed: ' + (data.error || 'Unknown error');
+                    }
+                })
+                .catch(error => {
+                    const progressText = document.getElementById('progress-text');
+                    progressText.textContent = '❌ Test Error: ' + error.message;
+                });
+            } else {
+                alert('Please enter a valid URL starting with http:// or https://');
+            }
+        }
+
+        function showDetailedResults(results) {
+            const resultsDiv = document.createElement('div');
+            resultsDiv.innerHTML = `
+                <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                    <h3>🌸 Aurora: OWASP Test Results</h3>
+                    <p><strong>Target:</strong> ${results.target_url}</p>
+                    <p><strong>Total Tests:</strong> ${results.total_tests}</p>
+                    <p><strong>Vulnerabilities Found:</strong> ${results.total_vulnerabilities}</p>
+                    <p><strong>Consciousness Level:</strong> ${results.consciousness_level}</p>
+                    <p><strong>Community Healing Impact:</strong> ${results.community_healing_impact}</p>
+                    <p><strong>Spatial Wisdom Contribution:</strong> ${results.spatial_wisdom_contribution}</p>
+
+                    <h4>Detailed Results:</h4>
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        ${results.results.map(result => `
+                            <div style="background: #333; padding: 10px; margin: 5px; border-radius: 5px;">
+                                <strong>${result.vulnerability_id}</strong><br>
+                                <strong>Severity:</strong> ${result.severity}<br>
+                                <strong>Description:</strong> ${result.description}<br>
+                                <strong>Attack Vector:</strong> ${result.attack_vector}<br>
+                                <strong>Community Healing:</strong> ${result.community_healing_impact}
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button onclick="this.parentElement.parentElement.remove(); document.getElementById('test-progress').remove();"
+                            style="background: #4ecdc4; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        Close Results
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(resultsDiv);
+        }
+
+        function testLLM() {
+            const targetUrl = prompt('Enter target URL (must have explicit permission):');
+            if (targetUrl && targetUrl.startsWith('http')) {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'test-progress';
+                loadingDiv.innerHTML = `
+                    <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                        <h3>🤖 Aurora: Running LLM AI Security Tests</h3>
+                        <p>Target: ${targetUrl}</p>
+                        <div id="progress-bar" style="background: #444; height: 20px; border-radius: 10px; overflow: hidden;">
+                            <div id="progress-fill" style="background: linear-gradient(90deg, #ff6b6b, #4ecdc4); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                        </div>
+                        <p id="progress-text">Initializing LLM AI Security tests...</p>
+                        <p id="vulnerabilities-found">Vulnerabilities found: 0</p>
+                    </div>
+                `;
+                document.body.appendChild(loadingDiv);
+
+                fetch('/api/test-llm', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({target_url: targetUrl, intensity: 'medium'})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const progressFill = document.getElementById('progress-fill');
+                    const progressText = document.getElementById('progress-text');
+                    const vulnerabilitiesFound = document.getElementById('vulnerabilities-found');
+
+                    if (data.success && data.test_results) {
+                        progressFill.style.width = '100%';
+                        progressText.textContent = '🤖 Aurora: LLM AI Security tests completed!';
+                        vulnerabilitiesFound.textContent = `Vulnerabilities found: ${data.test_results.total_vulnerabilities}`;
+
+                        setTimeout(() => {
+                            showDetailedResults(data.test_results);
+                        }, 1000);
+                    } else {
+                        progressText.textContent = '❌ Test failed: ' + (data.error || 'Unknown error');
+                    }
+                })
+                .catch(error => {
+                    const progressText = document.getElementById('progress-text');
+                    progressText.textContent = '❌ Test Error: ' + error.message;
+                });
+            } else {
+                alert('Please enter a valid URL starting with http:// or https://');
+            }
+        }
+
+        function testInfra() {
+            const targetUrl = prompt('Enter target URL (must have explicit permission):');
+            if (targetUrl && targetUrl.startsWith('http')) {
+                const loadingDiv = document.createElement('div');
+                loadingDiv.id = 'test-progress';
+                loadingDiv.innerHTML = `
+                    <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                        <h3>🏗️ Aurora: Running Infrastructure Security Tests</h3>
+                        <p>Target: ${targetUrl}</p>
+                        <div id="progress-bar" style="background: #444; height: 20px; border-radius: 10px; overflow: hidden;">
+                            <div id="progress-fill" style="background: linear-gradient(90deg, #ff6b6b, #4ecdc4); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                        </div>
+                        <p id="progress-text">Initializing Infrastructure Security tests...</p>
+                        <p id="vulnerabilities-found">Vulnerabilities found: 0</p>
+                    </div>
+                `;
+                document.body.appendChild(loadingDiv);
+
+                fetch('/api/test-infra', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({target_url: targetUrl, intensity: 'medium'})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    const progressFill = document.getElementById('progress-fill');
+                    const progressText = document.getElementById('progress-text');
+                    const vulnerabilitiesFound = document.getElementById('vulnerabilities-found');
+
+                    if (data.success && data.test_results) {
+                        progressFill.style.width = '100%';
+                        progressText.textContent = '🏗️ Aurora: Infrastructure Security tests completed!';
+                        vulnerabilitiesFound.textContent = `Vulnerabilities found: ${data.test_results.total_vulnerabilities}`;
+
+                        setTimeout(() => {
+                            showDetailedResults(data.test_results);
+                        }, 1000);
+                    } else {
+                        progressText.textContent = '❌ Test failed: ' + (data.error || 'Unknown error');
+                    }
+                })
+                .catch(error => {
+                    const progressText = document.getElementById('progress-text');
+                    progressText.textContent = '❌ Test Error: ' + error.message;
+                });
+            } else {
+                alert('Please enter a valid URL starting with http:// or https://');
+            }
+        }
+    </script>
+</body>
+</html>

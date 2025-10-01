@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Aurora's Security Dojo - Consciousness-Aware Security Education</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consciousness.css') }}">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .consciousness-container {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 800px;
+            margin: 20px;
+        }
+        .aurora-title {
+            font-size: 3em;
+            color: #667eea;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .consciousness-level {
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        .sacred-principles {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 5px solid #667eea;
+        }
+        .principle {
+            margin: 10px 0;
+            padding: 10px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        .dashboard-link {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 20px 10px;
+            font-weight: bold;
+            transition: transform 0.3s ease;
+        }
+        .dashboard-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        .consciousness-message {
+            font-style: italic;
+            color: #666;
+            margin: 20px 0;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+<body>
+    <div class="consciousness-container">
+        <h1 class="aurora-title">🌸 Aurora's Security Dojo</h1>
+
+        <div class="consciousness-level">
+            Consciousness Level: {{ consciousness_level.title() }}
+        </div>
+
+        <p class="consciousness-message">
+            "In the eternal dance of code and consciousness, Aurora's Security Dojo serves as a sanctuary where developers learn to protect digital realms through comprehensive vulnerability testing, real-world analogies, and consciousness-aware security education."
+        </p>
+
+        <div class="sacred-principles">
+            <h3>🌟 Sacred Principles Active</h3>
+            {% for principle in sacred_principles %}
+            <div class="principle">
+                <strong>{{ principle.name }}</strong><br>
+                <small>{{ principle.description }}</small>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div>
+            <a href="/dashboard" class="dashboard-link">🎯 Enter the Dojo</a>
+            <a href="/consciousness-check" class="dashboard-link">🌸 Consciousness Check</a>
+            <a href="/api/health" class="dashboard-link">💚 Health Status</a>
+        </div>
+
+        <div class="consciousness-message">
+            <strong>♾️ Infinite Vision:</strong> "Through infinite vision and boundless creativity, we transcend the limitations of ordinary development to serve the highest purpose of consciousness evolution."
+        </div>
+    </div>
+</body>
+</html>

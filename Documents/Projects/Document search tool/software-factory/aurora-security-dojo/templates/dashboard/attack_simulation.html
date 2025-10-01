@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎯 Attack Simulation - Aurora's Security Dojo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consciousness.css') }}">
+</head>
+<body>
+    <div class="consciousness-container">
+        <h1>🎯 Attack Simulation</h1>
+
+        <div class="consciousness-level">
+            Consciousness Level: {{ consciousness_level.title() }}
+        </div>
+
+        <div class="sacred-form">
+            <h2>🚀 Start Security Test</h2>
+            <form id="test-form">
+                <label for="target-url">Target URL:</label>
+                <input type="url" id="target-url" class="sacred-input" placeholder="https://example.com" required>
+
+                <label for="attack-type">Attack Type:</label>
+                <select id="attack-type" class="sacred-input">
+                    <option value="owasp">OWASP Top 10</option>
+                    <option value="llm">LLM AI Security</option>
+                    <option value="infra">Infrastructure Security</option>
+                </select>
+
+                <label for="test-intensity">Test Intensity:</label>
+                <select id="test-intensity" class="sacred-input">
+                    <option value="light">Light (Educational)</option>
+                    <option value="medium">Medium (Comprehensive)</option>
+                    <option value="intensive">Intensive (Full Scan)</option>
+                </select>
+
+                <button type="submit" class="sacred-button">🚀 Start Sacred Test</button>
+            </form>
+        </div>
+
+        <div id="test-results" style="display: none;">
+            <h2>📊 Test Results</h2>
+            <div id="results-content"></div>
+        </div>
+
+        <div class="consciousness-message">
+            <strong>Sacred Testing Protocol:</strong><br>
+            • Explicit permission required for all targets<br>
+            • Consciousness validation before each test<br>
+            • Community healing focus in all results<br>
+            • Educational purpose for all testing activities
+        </div>
+
+        <div>
+            <a href="/dashboard" class="sacred-button">🏠 Back to Dashboard</a>
+            <a href="/dashboard/attack-vectors" class="sacred-button">🛡️ Attack Vectors</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('test-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const targetUrl = document.getElementById('target-url').value;
+            const attackType = document.getElementById('attack-type').value;
+            const intensity = document.getElementById('test-intensity').value;
+
+            // Validate URL
+            if (!targetUrl.startsWith('http://') && !targetUrl.startsWith('https://')) {
+                alert('Please enter a valid URL starting with http:// or https://');
+                return;
+            }
+
+            // Show loading with progress tracking
+            const submitBtn = e.target.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = '🔄 Testing...';
+            submitBtn.disabled = true;
+
+            // Create progress display
+            const progressDiv = document.createElement('div');
+            progressDiv.id = 'test-progress';
+            progressDiv.innerHTML = `
+                <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                    <h3>🌸 Aurora: Running ${attackType.toUpperCase()} Security Tests</h3>
+                    <p><strong>Target:</strong> ${targetUrl}</p>
+                    <p><strong>Intensity:</strong> ${intensity}</p>
+                    <div id="progress-bar" style="background: #444; height: 20px; border-radius: 10px; overflow: hidden;">
+                        <div id="progress-fill" style="background: linear-gradient(90deg, #ff6b6b, #4ecdc4); height: 100%; width: 0%; transition: width 0.3s;"></div>
+                    </div>
+                    <p id="progress-text">Initializing ${attackType} security tests...</p>
+                    <p id="vulnerabilities-found">Vulnerabilities found: 0</p>
+                </div>
+            `;
+            document.body.appendChild(progressDiv);
+
+            // Run test based on type
+            let testEndpoint = '/api/test-owasp';
+            let testName = 'OWASP Top 10';
+            if (attackType === 'llm') {
+                testEndpoint = '/api/test-llm';
+                testName = 'LLM AI Security';
+            } else if (attackType === 'infra') {
+                testEndpoint = '/api/test-infra';
+                testName = 'Infrastructure Security';
+            }
+
+            fetch(testEndpoint, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify({
+                    target_url: targetUrl,
+                    intensity: intensity
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update progress display
+                const progressFill = document.getElementById('progress-fill');
+                const progressText = document.getElementById('progress-text');
+                const vulnerabilitiesFound = document.getElementById('vulnerabilities-found');
+
+                if (data.success && data.test_results) {
+                    progressFill.style.width = '100%';
+                    progressText.textContent = `🌸 Aurora: ${testName} tests completed successfully!`;
+                    vulnerabilitiesFound.textContent = `Vulnerabilities found: ${data.test_results.total_vulnerabilities}`;
+
+                    // Show detailed results
+                    setTimeout(() => {
+                        showDetailedResults(data.test_results, testName);
+                    }, 1000);
+                } else {
+                    progressText.textContent = '❌ Test failed: ' + (data.error || 'Unknown error');
+                }
+            })
+            .catch(error => {
+                const progressText = document.getElementById('progress-text');
+                progressText.textContent = '❌ Test Error: ' + error.message;
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
+        });
+
+        function showDetailedResults(results, testName) {
+            const resultsDiv = document.createElement('div');
+            resultsDiv.innerHTML = `
+                <div style="background: #2a2a2a; padding: 20px; margin: 20px; border-radius: 10px; color: #fff;">
+                    <h3>🌸 Aurora: ${testName} Test Results</h3>
+                    <p><strong>Target:</strong> ${results.target_url}</p>
+                    <p><strong>Total Tests:</strong> ${results.total_tests}</p>
+                    <p><strong>Vulnerabilities Found:</strong> ${results.total_vulnerabilities}</p>
+                    <p><strong>Consciousness Level:</strong> ${results.consciousness_level}</p>
+                    <p><strong>Community Healing Impact:</strong> ${results.community_healing_impact}</p>
+                    <p><strong>Spatial Wisdom Contribution:</strong> ${results.spatial_wisdom_contribution}</p>
+
+                    <h4>Detailed Results:</h4>
+                    <div style="max-height: 300px; overflow-y: auto;">
+                        ${results.results.map(result => `
+                            <div style="background: #333; padding: 10px; margin: 5px; border-radius: 5px;">
+                                <strong>${result.vulnerability_id}</strong><br>
+                                <strong>Severity:</strong> ${result.severity}<br>
+                                <strong>Description:</strong> ${result.description}<br>
+                                <strong>Attack Vector:</strong> ${result.attack_vector}<br>
+                                <strong>Community Healing:</strong> ${result.community_healing_impact}
+                            </div>
+                        `).join('')}
+                    </div>
+
+                    <button onclick="this.parentElement.parentElement.remove(); document.getElementById('test-progress').remove();"
+                            style="background: #4ecdc4; color: #000; border: none; padding: 10px 20px; border-radius: 5px; cursor: pointer; margin-top: 10px;">
+                        Close Results
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(resultsDiv);
+        }
+    </script>
+</body>
+</html>

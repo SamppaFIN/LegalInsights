@@ -1,0 +1,22 @@
+# Secrets
+**/.env
+**/*.env
+
+# Node
+**/node_modules/
+**/build/
+**/.next/
+**/dist/
+**/coverage/
+**/.turbo/
+**/.cache/
+**/*.log
+
+# Local factories and caches
+.factory-in/
+.factory-out/
+
+# OS
+Thumbs.db
+Desktop.ini
+.DS_Store

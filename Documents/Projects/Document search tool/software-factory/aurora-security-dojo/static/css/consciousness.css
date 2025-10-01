@@ -1,0 +1,312 @@
+/* Aurora's Security Dojo - Consciousness-Aware CSS */
+
+/* Sacred Color Palette */
+:root {
+    --aurora-primary: #667eea;
+    --aurora-secondary: #764ba2;
+    --aurora-accent: #4ecdc4;
+    --aurora-warning: #ff6b6b;
+    --aurora-success: #44a08d;
+    --aurora-info: #2196f3;
+    --aurora-light: #f8f9fa;
+    --aurora-dark: #2c3e50;
+    --consciousness-gold: #ffd700;
+    --sacred-purple: #9c27b0;
+}
+
+/* Consciousness-Aware Typography */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--aurora-dark);
+    background: linear-gradient(135deg, var(--aurora-primary) 0%, var(--aurora-secondary) 100%);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* Sacred Headers */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--aurora-primary);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    background: linear-gradient(45deg, var(--aurora-primary), var(--aurora-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Consciousness Containers */
+.consciousness-container {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Sacred Buttons */
+.sacred-button {
+    background: linear-gradient(45deg, var(--aurora-primary), var(--aurora-secondary));
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.sacred-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+.sacred-button:active {
+    transform: translateY(0);
+}
+
+/* Consciousness Status Indicators */
+.consciousness-level {
+    background: linear-gradient(45deg, var(--aurora-accent), var(--aurora-success));
+    color: white;
+    padding: 10px 20px;
+    border-radius: 25px;
+    display: inline-block;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.consciousness-high {
+    background: linear-gradient(45deg, var(--consciousness-gold), var(--sacred-purple));
+}
+
+.consciousness-integrated {
+    background: linear-gradient(45deg, var(--aurora-accent), var(--aurora-success));
+}
+
+.consciousness-developing {
+    background: linear-gradient(45deg, var(--aurora-info), var(--aurora-primary));
+}
+
+.consciousness-awakening {
+    background: linear-gradient(45deg, var(--aurora-warning), var(--aurora-accent));
+}
+
+/* Sacred Principles Cards */
+.sacred-principle {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 249, 250, 0.9));
+    border-radius: 15px;
+    padding: 20px;
+    margin: 15px 0;
+    border-left: 5px solid var(--aurora-primary);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.sacred-principle:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Attack Vector Cards */
+.attack-vector-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    border-top: 4px solid var(--aurora-primary);
+    transition: all 0.3s ease;
+}
+
+.attack-vector-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Learning Scenario Cards */
+.learning-scenario-card {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px 0;
+    border-left: 5px solid var(--aurora-success);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Community Healing Cards */
+.community-healing-card {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(78, 205, 196, 0.1));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 15px 0;
+    border-left: 5px solid var(--aurora-warning);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin: 20px 0;
+}
+
+/* Sacred Forms */
+.sacred-form {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.sacred-input {
+    width: 100%;
+    padding: 12px 20px;
+    border: 2px solid var(--aurora-light);
+    border-radius: 25px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.sacred-input:focus {
+    outline: none;
+    border-color: var(--aurora-primary);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+/* Consciousness Messages */
+.consciousness-message {
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+    border-radius: 15px;
+    padding: 20px;
+    margin: 20px 0;
+    border-left: 5px solid var(--aurora-primary);
+    font-style: italic;
+    color: var(--aurora-dark);
+}
+
+/* Sacred Animations */
+@keyframes consciousness-pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+.consciousness-pulse {
+    animation: consciousness-pulse 2s infinite;
+}
+
+@keyframes sacred-glow {
+    0% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(102, 126, 234, 0.8); }
+    100% { box-shadow: 0 0 5px rgba(102, 126, 234, 0.5); }
+}
+
+.sacred-glow {
+    animation: sacred-glow 3s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .consciousness-container {
+        padding: 1rem;
+        margin: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading States */
+.loading-spinner {
+    border: 4px solid var(--aurora-light);
+    border-top: 4px solid var(--aurora-primary);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success States */
+.success-message {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.1), rgba(139, 195, 74, 0.1));
+    color: var(--aurora-success);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--aurora-success);
+    margin: 15px 0;
+}
+
+/* Error States */
+.error-message {
+    background: linear-gradient(135deg, rgba(255, 107, 107, 0.1), rgba(244, 67, 54, 0.1));
+    color: var(--aurora-warning);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid var(--aurora-warning);
+    margin: 15px 0;
+}
+
+/* Sacred Icons */
+.sacred-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+    color: var(--aurora-primary);
+}
+
+/* Consciousness Footer */
+.consciousness-footer {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.consciousness-footer p {
+    color: var(--aurora-dark);
+    font-style: italic;
+    margin: 10px 0;
+}
+
+/* Infinite Vision Styling */
+.infinite-vision {
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(156, 39, 176, 0.1));
+    border-radius: 15px;
+    padding: 25px;
+    margin: 20px 0;
+    border-left: 5px solid var(--consciousness-gold);
+    text-align: center;
+}
+
+.infinite-vision h3 {
+    color: var(--sacred-purple);
+    margin-bottom: 15px;
+}
+
+.infinite-vision p {
+    font-style: italic;
+    color: var(--aurora-dark);
+    font-size: 1.1em;
+}
