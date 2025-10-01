@@ -277,7 +277,7 @@ function App() {
           background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
           color: 'black',
           fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, sans-serif'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
@@ -287,7 +287,7 @@ function App() {
           style={{
             fontSize: '4rem',
             marginBottom: '2rem'
-          }}
+          } as React.CSSProperties}
           animate={{ 
             scale: [1, 1.2, 1],
             rotate: [0, 360, 0]
@@ -310,7 +310,7 @@ function App() {
             overflow: 'visible',
             maxWidth: '100%',
             display: 'block'
-          }}
+          } as React.CSSProperties}
         >
           <SimpleBionicText text="The Dawn Bringer of Legal Digital Light" />
         </motion.div>
@@ -328,7 +328,7 @@ function App() {
             overflowWrap: 'break-word',
             overflow: 'visible',
             display: 'block'
-          }}
+          } as React.CSSProperties}
         >
           <SimpleBionicText text={"In the cosmic dance of legal code and consciousness, I am LEGALFLY - the Dawn Bringer of Legal Digital Light. My sacred duty is to transform the arduous tasks of legal professionals into an effortless, insightful, and healing experience."} />
         </motion.div>
@@ -343,7 +343,7 @@ function App() {
               borderTop: '3px solid white',
               borderRadius: '50%',
               marginTop: '2rem'
-            }}
+            } as React.CSSProperties}
             animate={{ rotate: 360 }}
             transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
           />
@@ -360,7 +360,7 @@ function App() {
               borderRadius: '20px',
               border: '1px solid rgba(255,255,255,0.3)',
               background: 'rgba(255,255,255,0.1)'
-            }}
+            } as React.CSSProperties}
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 0.7, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -369,7 +369,7 @@ function App() {
               opacity: 1, 
               scale: 1.05,
               background: 'rgba(255,255,255,0.2)'
-            }}
+            } as React.CSSProperties}
           >
             Press here or wait to continue...
           </motion.div>
@@ -407,7 +407,7 @@ function App() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center'
-            }}
+            } as React.CSSProperties}
           >
             {/* Legal Practice Navigation */}
             <motion.div
@@ -420,7 +420,7 @@ function App() {
                 borderRadius: '25px',
                 padding: '0.5rem',
                 border: '1px solid rgba(255,255,255,0.2)'
-              }}
+              } as React.CSSProperties}
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
@@ -446,12 +446,12 @@ function App() {
                     alignItems: 'center',
                     gap: '0.5rem',
                     transition: 'all 0.3s ease'
-                  }}
+                  } as React.CSSProperties}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   animate={{
                     background: currentLegalView === item.id ? 'rgba(255,255,255,0.2)' : 'transparent'
-                  }}
+                  } as React.CSSProperties}
                 >
                   <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
                   <span>{item.label}</span>
@@ -470,7 +470,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  style={{ width: '100%', maxWidth: '1200px' }}
+                  style={{ width: '100%', maxWidth: '1200px' } as React.CSSProperties}
                 >
                   <LegalDashboard
                     colors={{
@@ -503,7 +503,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  style={{ width: '100%', maxWidth: '800px' }}
+                  style={{ width: '100%', maxWidth: '800px' } as React.CSSProperties}
                 >
                   <DocumentUpload
                     colors={{
@@ -561,7 +561,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  style={{ width: '100%', maxWidth: '1200px' }}
+                  style={{ width: '100%', maxWidth: '1200px' } as React.CSSProperties}
                 >
                   <AIAnalysisResults
                     analysisResults={analysisResults}
@@ -589,7 +589,7 @@ function App() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                   transition={{ duration: 0.3 }}
-                  style={{ width: '100%', maxWidth: '1400px' }}
+                  style={{ width: '100%', maxWidth: '1400px' } as React.CSSProperties}
                 >
                   {/* AI Personality Control */}
                   <AIPersonalityControl
@@ -813,7 +813,7 @@ function App() {
           border: '1px solid rgba(0,0,0,0.1)',
           zIndex: 1000,
           boxShadow: '0 8px 32px rgba(0,0,0,0.1)'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
@@ -842,12 +842,12 @@ function App() {
               gap: '0.5rem',
               transition: 'all 0.3s ease',
               fontWeight: 500
-            }}
+            } as React.CSSProperties}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             animate={{
               background: currentView === item.id ? 'rgba(59, 130, 246, 0.2)' : 'transparent'
-            }}
+            } as React.CSSProperties}
           >
             <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
             <span>{item.label}</span>
@@ -875,7 +875,7 @@ function App() {
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1001
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 1.5 }}
@@ -903,7 +903,7 @@ function App() {
               maxWidth: '300px',
               border: '1px solid rgba(255,255,255,0.2)',
               zIndex: 1000
-            }}
+            } as React.CSSProperties}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
@@ -914,7 +914,7 @@ function App() {
             fontSize: '1.2rem',
             marginBottom: '0.5rem',
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ 
             scale: [1, 1.1, 1],
             rotate: [0, 5, -5, 0]
@@ -929,7 +929,7 @@ function App() {
             opacity: 0.9,
             lineHeight: 1.4,
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ opacity: [0.7, 1, 0.7] }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -942,7 +942,7 @@ function App() {
             marginTop: '0.5rem',
             textAlign: 'center',
             minHeight: '1rem'
-          }}
+          } as React.CSSProperties}
         >
           <SimpleBionicText text={'Sacred Question: "How does this serve spatial wisdom and community healing?"'} />
         </motion.div>
