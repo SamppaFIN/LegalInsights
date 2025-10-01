@@ -486,7 +486,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           fontWeight: 300,
           marginBottom: '1.5rem',
           textAlign: 'center'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -502,7 +502,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
           gap: '1rem',
           marginBottom: '2rem'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.4 }}
@@ -514,7 +514,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.consciousness}40`
-          }}
+          } as React.CSSProperties}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -534,7 +534,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.healing}40`
-          }}
+          } as React.CSSProperties}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -554,7 +554,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.spatial}40`
-          }}
+          } as React.CSSProperties}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -574,7 +574,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.infinite}40`
-          }}
+          } as React.CSSProperties}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -598,7 +598,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           flexWrap: 'wrap',
           justifyContent: 'center',
           alignItems: 'center'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
