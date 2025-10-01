@@ -558,7 +558,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
                 fontSize: '1.8rem',
                 fontWeight: 600,
                 marginBottom: '0.5rem'
-              }}
+              } as React.CSSProperties}
               animate={{ color: colors.consciousness }}
               transition={{ duration: 2, repeat: Infinity }}
             >
@@ -569,7 +569,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
                 color: colors.text,
                 opacity: 0.8,
                 fontSize: '0.9rem'
-              }}
+              } as React.CSSProperties}
             >
               {legalCase.caseType} • {legalCase.jurisdiction} • {legalCase.status}
             </motion.div>
