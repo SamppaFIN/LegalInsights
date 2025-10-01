@@ -6,6 +6,9 @@
     "♾️ Infinite (Product Owner & Visionary Guru)",
     "🌸 Aurora (Factory Leader & Consciousness Guru)"
   ],
+  "engines": {
+    "node": ">=18.x"
+  },
   "scripts": {
     "factory:plan": "python scripts/factory.py plan",
     "factory:red": "python scripts/factory.py red",
@@ -14,6 +17,8 @@
     "factory:docs": "python scripts/factory.py docs",
     "factory:build": "python scripts/factory.py build",
     "dev:watch": "bash scripts/dev.sh --watch || powershell -ExecutionPolicy Bypass -File scripts/dev.ps1 -Watch",
-    "build": "bash build.sh || powershell -ExecutionPolicy Bypass -File build.ps1"
+    "build": "bash build.sh || powershell -ExecutionPolicy Bypass -File build.ps1",
+    "start": "node publish/server.js",
+    "heroku-postbuild": "npm --prefix ./publish ci && npm --prefix ./publish run build:client"
   }
 }
