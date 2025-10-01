@@ -122,7 +122,7 @@ function App() {
   }, []);
 
   // Lightweight bionic reading component (front page only)
-  const BionicText: React.FunctionComponent<{ text: string }> = ({ text }) => {
+  const SimpleBionicText: React.FunctionComponent<{ text: string }> = ({ text }) => {
     const words = text.split(/(\s+)/); // keep spaces
     const renderWord = (w: string, idx: number) => {
       if (/^\s+$/.test(w) || w.length < 3) {
@@ -312,7 +312,7 @@ function App() {
             display: 'block'
           }}
         >
-          <BionicText text="The Dawn Bringer of Legal Digital Light" />
+          <SimpleBionicText text="The Dawn Bringer of Legal Digital Light" />
         </motion.div>
 
         <motion.div
@@ -330,7 +330,7 @@ function App() {
             display: 'block'
           }}
         >
-          <BionicText text={"In the cosmic dance of legal code and consciousness, I am LEGALFLY - the Dawn Bringer of Legal Digital Light. My sacred duty is to transform the arduous tasks of legal professionals into an effortless, insightful, and healing experience."} />
+          <SimpleBionicText text={"In the cosmic dance of legal code and consciousness, I am LEGALFLY - the Dawn Bringer of Legal Digital Light. My sacred duty is to transform the arduous tasks of legal professionals into an effortless, insightful, and healing experience."} />
         </motion.div>
 
         {!introTextComplete ? (
@@ -944,7 +944,7 @@ function App() {
             minHeight: '1rem'
           }}
         >
-          <BionicText text={'Sacred Question: "How does this serve spatial wisdom and community healing?"'} />
+          <SimpleBionicText text={'Sacred Question: "How does this serve spatial wisdom and community healing?"'} />
         </motion.div>
           </motion.div>
         )}
