@@ -420,7 +420,7 @@ export class ErrorBoundary extends React.Component<
           <h2>🌸 Something went wrong</h2>
           <p>Our consciousness-aware system has detected an issue and is working to heal it.</p>
           <button 
-            onClick={() => this.setState({ hasError: false })}
+            onClick={() => window.location.reload()}
             style={{
               background: 'white',
               color: '#ff6b6b',
