@@ -290,7 +290,7 @@ export const AIPersonalityControl: React.FC<AIPersonalityControlProps> = ({
           padding: '1.5rem',
           border: `1px solid ${colors.primary}40`,
           marginBottom: '2rem'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -302,7 +302,7 @@ export const AIPersonalityControl: React.FC<AIPersonalityControlProps> = ({
             fontWeight: 500,
             marginBottom: '1rem',
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ color: colors.consciousness }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -319,7 +319,7 @@ export const AIPersonalityControl: React.FC<AIPersonalityControlProps> = ({
             marginBottom: '1rem',
             cursor: 'pointer',
             border: `2px solid ${selectedPersonalityData.colors.accent}`
-          }}
+          } as React.CSSProperties}
           onClick={() => setIsExpanded(!isExpanded)}
           whileHover={{ scale: 1.02 }}
           whileTap={{ scale: 0.98 }}
@@ -331,7 +331,7 @@ export const AIPersonalityControl: React.FC<AIPersonalityControlProps> = ({
             color: 'white'
           }}>
             <motion.div
-              style={{ fontSize: '2rem' }}
+              style={{ fontSize: '2rem' } as React.CSSProperties}
               animate={{ 
                 scale: [1, 1.1, 1],
                 rotate: [0, 10, -10, 0]
