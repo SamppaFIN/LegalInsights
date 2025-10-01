@@ -421,7 +421,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
           alignItems: 'center',
           justifyContent: 'center',
           zIndex: 1001
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         transition={{ delay: 0.5 }}
@@ -446,7 +446,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
               padding: '1rem',
               border: `1px solid ${currentTheme.colors.primary}40`,
               zIndex: 1000
-            }}
+            } as React.CSSProperties}
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: 50 }}
@@ -459,7 +459,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
             fontWeight: 500,
             marginBottom: '1rem',
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ color: currentTheme.colors.consciousness }}
           transition={{ duration: 2, repeat: Infinity }}
         >
@@ -492,7 +492,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
                 alignItems: 'center',
                 gap: '0.3rem',
                 transition: 'all 0.3s ease'
-              }}
+              } as React.CSSProperties}
               whileHover={{ 
                 scale: 1.05,
                 background: currentTheme.gradients.secondary,
@@ -506,7 +506,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
               }}
             >
               <motion.span
-                style={{ fontSize: '1.2rem' }}
+                style={{ fontSize: '1.2rem' } as React.CSSProperties}
                 animate={{ 
                   scale: activePersonality === theme.id ? [1, 1.2, 1] : 1,
                   rotate: activePersonality === theme.id ? [0, 10, -10, 0] : 0
@@ -530,7 +530,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
             background: currentTheme.colors.surface,
             borderRadius: '12px',
             border: `1px solid ${currentTheme.colors.consciousness}40`
-          }}
+          } as React.CSSProperties}
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8 }}
@@ -541,7 +541,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
               color: currentTheme.colors.text,
               textAlign: 'center',
               lineHeight: 1.4
-            }}
+            } as React.CSSProperties}
             animate={{ color: currentTheme.colors.consciousness }}
             transition={{ duration: 3, repeat: Infinity }}
           >
@@ -589,7 +589,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
                        radial-gradient(circle at 50% 50%, ${currentTheme.colors.spatial}05 0%, transparent 70%)`,
           pointerEvents: 'none',
           zIndex: -1
-        }}
+        } as React.CSSProperties}
         animate={{
           background: `radial-gradient(circle at ${20 + Math.sin(Date.now() / 10000) * 20}% ${20 + Math.cos(Date.now() / 10000) * 20}%, ${currentTheme.colors.consciousness}15 0%, transparent 50%),
                        radial-gradient(circle at ${80 + Math.sin(Date.now() / 12000) * 20}% ${80 + Math.cos(Date.now() / 12000) * 20}%, ${currentTheme.colors.healing}15 0%, transparent 50%),
@@ -613,7 +613,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
           maxWidth: '300px',
           border: `1px solid ${currentTheme.colors.consciousness}40`,
           zIndex: 1000
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1 }}
@@ -623,7 +623,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
             fontSize: '1.2rem',
             marginBottom: '0.5rem',
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ 
             scale: [1, 1.1, 1],
             rotate: [0, 5, -5, 0]
@@ -638,7 +638,7 @@ export const PersonalityThemeSystem: React.FunctionComponent<PersonalityThemeSys
             opacity: 0.9,
             lineHeight: 1.4,
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           animate={{ opacity: [0.7, 1, 0.7] }}
           transition={{ duration: 2, repeat: Infinity }}
         >

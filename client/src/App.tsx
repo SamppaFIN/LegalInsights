@@ -369,7 +369,7 @@ function App() {
               opacity: 1, 
               scale: 1.05,
               background: 'rgba(255,255,255,0.2)'
-            } as React.CSSProperties}
+            }}
           >
             Press here or wait to continue...
           </motion.div>
@@ -451,7 +451,7 @@ function App() {
                   whileTap={{ scale: 0.95 }}
                   animate={{
                     background: currentLegalView === item.id ? 'rgba(255,255,255,0.2)' : 'transparent'
-                  } as React.CSSProperties}
+                  }}
                 >
                   <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
                   <span>{item.label}</span>
@@ -847,7 +847,7 @@ function App() {
             whileTap={{ scale: 0.95 }}
             animate={{
               background: currentView === item.id ? 'rgba(59, 130, 246, 0.2)' : 'transparent'
-            } as React.CSSProperties}
+            }}
           >
             <span style={{ fontSize: '1.2rem' }}>{item.icon}</span>
             <span>{item.label}</span>

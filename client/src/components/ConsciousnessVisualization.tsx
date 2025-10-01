@@ -103,7 +103,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
               animate={{ 
                 scale: [1, 1.1, 1],
                 color: [colors.consciousness, colors.primary, colors.consciousness]
-              } as React.CSSProperties}
+              }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               {consciousnessLevel.toFixed(1)}
@@ -178,7 +178,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
                 background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
                 borderRadius: '10px'
               } as React.CSSProperties}
-              animate={{ left: '100%' } as React.CSSProperties}
+              animate={{ left: '100%' }}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
@@ -243,7 +243,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4 + index * 0.1 }}
-              whileHover={{ scale: 1.05, backgroundColor: `${principle.color}30` } as React.CSSProperties}
+              whileHover={{ scale: 1.05, backgroundColor: `${principle.color}30` }}
             >
               <div style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>
                 {principle.icon}
@@ -279,7 +279,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           animate={{ 
             rotate: [0, 360],
             scale: [1, 1.1, 1]
-          } as React.CSSProperties}
+          }}
           transition={{ duration: 3, repeat: Infinity }}
         >
           {artisticMode === 'minimal' && '⚪'}

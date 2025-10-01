@@ -23,7 +23,7 @@
   "license": "MIT",
   "dependencies": {
     "autonomous-factory": "file:../..",
-    "framer-motion": "^10.16.16",
+    "framer-motion": "10.16.16",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-dropzone": "^14.2.3",
@@ -31,7 +31,7 @@
     "react-scripts": "5.0.1"
   },
   "devDependencies": {
-    "@types/react": "^18.2.45",
+    "@types/react": "18.2.45",
     "@types/react-dom": "^18.2.18",
     "typescript": "^4.9.5",
     "web-vitals": "^3.5.0"

@@ -132,7 +132,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                   color: '#1f2937',
                   fontSize: '0.9rem'
                 } as React.CSSProperties}
-                whileFocus={{ borderColor: colors.primary } as React.CSSProperties}
+                whileFocus={{ borderColor: colors.primary }}
               />
               
               <motion.select

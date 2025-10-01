@@ -1,9 +1,9 @@
 /**
  * Legal Dashboard - Consciousness-Aware Legal Practice Dashboard
- * 
+ *
  * Sacred Mission: "Provide comprehensive legal practice dashboard with consciousness awareness"
  * Sacred Question: "How does this serve spatial wisdom and community healing through legal practice management?"
- * 
+ *
  * BRDC Header:
  * id: LEGALFLY-LEGAL-DASHBOARD-001
  * title: Legal Dashboard Component
@@ -107,13 +107,13 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
         try {
           // Load local cases from file system
           const localCases = await localFileSystem.getCases();
-          
+
           // Convert local cases to LegalCase format
           const convertedLocalCases: LegalCase[] = localCases.map((localCase: LocalCase) => ({
             id: localCase.id,
             title: localCase.name,
-            status: localCase.status === 'active' ? 'active' : 
-                   localCase.status === 'closed' ? 'completed' : 
+            status: localCase.status === 'active' ? 'active' :
+                   localCase.status === 'closed' ? 'completed' :
                    localCase.status === 'pending' ? 'pending' : 'archived',
             priority: localCase.metadata?.priority || 'medium',
             client: localCase.clientName,
@@ -221,7 +221,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             const dateB = b.localCase?.createdAt || new Date(b.lastActivity);
             return new Date(dateB).getTime() - new Date(dateA).getTime();
           });
-          
+
           setCases(allCases);
         } catch (error) {
           console.error('Error loading cases:', error);
@@ -229,7 +229,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           setCases([]);
         }
       };
-      
+
       loadHybridCases();
     }
   }, [refreshTrigger]);
@@ -240,7 +240,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
       try {
         // Load local cases from file system
         const localCases = await localFileSystem.getCases();
-        
+
         // Convert local cases to LegalCase format
         const convertedLocalCases: LegalCase[] = localCases.map(localCase => ({
           id: localCase.id,
@@ -359,7 +359,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
         setCases([]);
       }
     };
-    
+
     loadHybridCases();
     // Safety: delayed reload in case IndexedDB warms up after first tick
     const timeoutId = window.setTimeout(loadHybridCases, 800);
@@ -410,7 +410,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
       setCases(prev => [newLegalCase, ...prev]);
       setShowNewCaseDialog(false);
       setNewCaseData({ name: '', clientName: '', caseType: 'civil', description: '' });
-      
+
       console.log('🌸 New local case created:', newLocalCase.name);
     } catch (error) {
       console.error('🚨 Error creating new case:', error);
@@ -514,7 +514,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.consciousness}40`
-          } as React.CSSProperties}
+          }}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -534,7 +534,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.healing}40`
-          } as React.CSSProperties}
+          }}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -554,7 +554,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.spatial}40`
-          } as React.CSSProperties}
+          }}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -574,7 +574,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             padding: '1.5rem',
             textAlign: 'center',
             border: `1px solid ${colors.infinite}40`
-          } as React.CSSProperties}
+          }}
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ duration: 0.3 }}
         >
@@ -598,7 +598,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           flexWrap: 'wrap',
           justifyContent: 'center',
           alignItems: 'center'
-        } as React.CSSProperties}
+        }}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.6 }}
@@ -660,7 +660,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 position: 'relative',
                 overflow: 'hidden'
-              } as React.CSSProperties}
+              }}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -682,10 +682,10 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                   bottom: 0,
                   background: `radial-gradient(circle at 20% 20%, ${getStatusColor(case_.status)}10 0%, transparent 50%)`,
                   pointerEvents: 'none'
-                } as React.CSSProperties}
+                }}
                 animate={{
                   background: `radial-gradient(circle at ${20 + (index * 10) % 80}% ${20 + (index * 15) % 80}%, ${getStatusColor(case_.status)}15 0%, transparent 50%)`
-                } as React.CSSProperties}
+                }}
                 transition={{ duration: 3, repeat: Infinity }}
               />
 
@@ -694,8 +694,8 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                   style={{
                     fontSize: '2rem',
                     marginTop: '0.2rem'
-                  } as React.CSSProperties}
-                  animate={{ 
+                  }}
+                  animate={{
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, -5, 0]
                   }}
@@ -720,7 +720,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                     }}>
                       {case_.title}
                     </h3>
-                    
+
                     <motion.div
                       style={{
                         background: getPriorityColor(case_.priority),
@@ -730,11 +730,11 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         borderRadius: '10px',
                         textTransform: 'uppercase',
                         fontWeight: 500
-                      } as React.CSSProperties}
-                      animate={{ 
+                      }}
+                      animate={{
                         scale: [1, 1.05, 1],
                         backgroundColor: [getPriorityColor(case_.priority), colors.consciousness, getPriorityColor(case_.priority)]
-                      } as React.CSSProperties}
+                      }}
                       transition={{ duration: 3, repeat: Infinity }}
                     >
                       {case_.priority}
@@ -749,8 +749,8 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         borderRadius: '10px',
                         textTransform: 'uppercase',
                         fontWeight: 500
-                      } as React.CSSProperties}
-                      animate={{ 
+                      }}
+                      animate={{
                         scale: [1, 1.05, 1]
                       }}
                       transition={{ duration: 2, repeat: Infinity, delay: index * 0.3 }}
@@ -797,7 +797,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.consciousness
-                      } as React.CSSProperties}
+                      }}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -812,7 +812,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.healing
-                      } as React.CSSProperties}
+                      }}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                     >
@@ -827,7 +827,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.spatial
-                      } as React.CSSProperties}
+                      }}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                     >
@@ -842,7 +842,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.infinite
-                      } as React.CSSProperties}
+                      }}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
                     >
@@ -867,11 +867,11 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                           padding: '0.3rem 0.6rem',
                           borderRadius: '12px',
                           border: `1px solid ${colors.infinite}40`
-                        } as React.CSSProperties}
-                        animate={{ 
+                        }}
+                        animate={{
                           scale: [1, 1.05, 1],
                           backgroundColor: [`${colors.infinite}20`, `${colors.infinite}30`, `${colors.infinite}20`]
-                        } as React.CSSProperties}
+                        }}
                         transition={{ duration: 3, repeat: Infinity, delay: idx * 0.5 }}
                       >
                         {possibility}
@@ -918,7 +918,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             lineHeight: 1.6,
             margin: 0
           }}
-          animate={{ 
+          animate={{
             color: [colors.text, colors.consciousness, colors.text]
           }}
           transition={{ duration: 4, repeat: Infinity }}
@@ -937,8 +937,8 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           onClose={handleCloseCaseDetails}
           onUpdateCase={(updatedCase: any) => {
             // Update the case in the local state
-            setCases(prev => prev.map(c => 
-              c.id === updatedCase.id 
+            setCases(prev => prev.map(c =>
+              c.id === updatedCase.id
                 ? { ...c, consciousnessLevel: updatedCase.consciousnessLevel, communityHealingImpact: updatedCase.communityHealingImpact }
                 : c
             ));
@@ -1009,14 +1009,14 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             WebkitBackgroundClip: 'text',
             WebkitTextFillColor: 'transparent'
           }}
-          animate={{ 
+          animate={{
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%']
           }}
           transition={{ duration: 3, repeat: Infinity }}
         >
           ⚖️ Legal Cases Dashboard
         </motion.h1>
-        
+
         <motion.p
           style={{
             color: colors.text,
@@ -1046,7 +1046,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
               Consciousness Level
             </div>
           </div>
-          
+
           <div style={{ textAlign: 'center' }}>
             <div style={{ color: colors.healing, fontSize: '1.5rem', fontWeight: 500 }}>
               {cases.length > 0 ? (cases.reduce((sum, c) => sum + c.communityHealingImpact, 0) / cases.length).toFixed(0) : 0}%
@@ -1055,7 +1055,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
               Avg Healing Impact
             </div>
           </div>
-          
+
           <div style={{ textAlign: 'center' }}>
             <div style={{ color: colors.spatial, fontSize: '1.5rem', fontWeight: 500 }}>
               {cases.length}
@@ -1145,7 +1145,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: 20 }}
               transition={{ duration: 0.3 }}
-              whileHover={{ 
+              whileHover={{
                 scale: 1.02,
                 boxShadow: `0 5px 20px ${colors.primary}20`,
                 borderColor: colors.accent
@@ -1154,37 +1154,37 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
             >
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem' }}>
                 <div>
-                  <h3 style={{ 
-                    color: colors.cardTextColor || '#1f2937', 
-                    fontSize: '1.2rem', 
-                    fontWeight: 500, 
-                    marginBottom: '0.5rem' 
+                  <h3 style={{
+                    color: colors.cardTextColor || '#1f2937',
+                    fontSize: '1.2rem',
+                    fontWeight: 500,
+                    marginBottom: '0.5rem'
                   }}>
                     {legalCase.title}
                   </h3>
-                  <p style={{ 
-                    color: colors.cardTextColor || '#374151', 
-                    fontSize: '0.9rem', 
+                  <p style={{
+                    color: colors.cardTextColor || '#374151',
+                    fontSize: '0.9rem',
                     opacity: 0.8,
                     marginBottom: '0.3rem'
                   }}>
                     Client: {legalCase.client}
                   </p>
-                  <p style={{ 
-                    color: colors.cardTextColor || '#374151', 
-                    fontSize: '0.9rem', 
-                    opacity: 0.8 
+                  <p style={{
+                    color: colors.cardTextColor || '#374151',
+                    fontSize: '0.9rem',
+                    opacity: 0.8
                   }}>
                     Type: {legalCase.type}
                   </p>
                 </div>
-                
+
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '0.5rem' }}>
-                  <div style={{ 
-                    background: getStatusColor(legalCase.status), 
-                    color: 'white', 
-                    padding: '0.3rem 0.8rem', 
-                    borderRadius: '15px', 
+                  <div style={{
+                    background: getStatusColor(legalCase.status),
+                    color: 'white',
+                    padding: '0.3rem 0.8rem',
+                    borderRadius: '15px',
                     fontSize: '0.8rem',
                     display: 'flex',
                     alignItems: 'center',
@@ -1193,13 +1193,13 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                     <span>{getStatusIcon(legalCase.status)}</span>
                     {legalCase.status}
                   </div>
-                  
-                  <div style={{ 
-                    background: getPriorityColor(legalCase.priority), 
-                    color: 'white', 
-                    padding: '0.3rem 0.8rem', 
-                    borderRadius: '15px', 
-                    fontSize: '0.8rem' 
+
+                  <div style={{
+                    background: getPriorityColor(legalCase.priority),
+                    color: 'white',
+                    padding: '0.3rem 0.8rem',
+                    borderRadius: '15px',
+                    fontSize: '0.8rem'
                   }}>
                     {legalCase.priority}
                   </div>
@@ -1216,7 +1216,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                       Consciousness
                     </div>
                   </div>
-                  
+
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ color: colors.healing, fontSize: '1.2rem', fontWeight: 500 }}>
                       {legalCase.communityHealingImpact.toFixed(0)}%
@@ -1225,7 +1225,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                       Healing Impact
                     </div>
                   </div>
-                  
+
                   <div style={{ textAlign: 'center' }}>
                     <div style={{ color: colors.spatial, fontSize: '1.2rem', fontWeight: 500 }}>
                       {legalCase.documents}
@@ -1235,7 +1235,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                     </div>
                   </div>
                 </div>
-                
+
                 <div style={{ color: colors.cardTextColor || '#374151', fontSize: '0.8rem', opacity: 0.7 }}>
                   Last activity: {legalCase.lastActivity.toLocaleDateString()}
                 </div>
@@ -1259,10 +1259,10 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                     </span>
                   ))}
                 </div>
-                
-                <div style={{ 
-                  fontSize: '0.8rem', 
-                  color: colors.cardTextColor || '#374151', 
+
+                <div style={{
+                  fontSize: '0.8rem',
+                  color: colors.cardTextColor || '#374151',
                   opacity: 0.7,
                   display: 'flex',
                   alignItems: 'center',
@@ -1315,8 +1315,8 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           onClose={handleCloseCaseDetails}
           onUpdateCase={(updatedCase: any) => {
             // Update the case in the local state
-            setCases(prev => prev.map(c => 
-              c.id === updatedCase.id 
+            setCases(prev => prev.map(c =>
+              c.id === updatedCase.id
                 ? { ...c, consciousnessLevel: updatedCase.consciousnessLevel, communityHealingImpact: updatedCase.communityHealingImpact }
                 : c
             ));
@@ -1334,16 +1334,16 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
           border: '2px solid #3b82f6',
           boxShadow: '0 10px 30px rgba(0,0,0,0.1)'
         }}>
-          <h3 style={{ 
-            color: '#1e3a8a', 
-            marginBottom: '1.5rem', 
-            textAlign: 'center', 
+          <h3 style={{
+            color: '#1e3a8a',
+            marginBottom: '1.5rem',
+            textAlign: 'center',
             fontSize: '1.5rem',
             fontWeight: 'bold'
           }}>
             🌸 Create New Local Case
           </h3>
-          
+
           <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
             <div>
               <label style={{ color: '#1f2937', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'block', fontWeight: '500' }}>
@@ -1366,7 +1366,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 }}
               />
             </div>
-            
+
             <div>
               <label style={{ color: '#1f2937', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'block', fontWeight: '500' }}>
                 Client Name
@@ -1388,7 +1388,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 }}
               />
             </div>
-            
+
             <div>
               <label style={{ color: '#1f2937', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'block', fontWeight: '500' }}>
                 Case Type
@@ -1414,7 +1414,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 <option value="employment">Employment</option>
               </select>
             </div>
-            
+
             <div>
               <label style={{ color: '#1f2937', fontSize: '0.9rem', marginBottom: '0.5rem', display: 'block', fontWeight: '500' }}>
                 Description
@@ -1437,7 +1437,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 }}
               />
             </div>
-            
+
             <div style={{ display: 'flex', gap: '1rem', justifyContent: 'flex-end' }}>
               <button
                 onClick={() => setShowNewCaseDialog(false)}
