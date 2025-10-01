@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>📚 Learning Academy - Aurora's Security Dojo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consciousness.css') }}">
+</head>
+<body>
+    <div class="consciousness-container">
+        <h1>📚 Learning Academy</h1>
+        
+        <div class="consciousness-level">
+            Consciousness Level: {{ consciousness_level.title() }}
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- Real-World Analogies -->
+            <div class="learning-scenario-card">
+                <h2 class="card-title">🌟 Real-World Analogies</h2>
+                <p>Complex security concepts explained through everyday experiences</p>
+                <div id="analogies-list">
+                    {% for analogy_name, analogy in analogies.items() %}
+                    <div class="sacred-principle">
+                        <strong>{{ analogy.title }}</strong><br>
+                        <small>{{ analogy.analogy }}</small><br>
+                        <button class="sacred-button" onclick="showAnalogy('{{ analogy_name }}')">📖 Read Full Analogy</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Learning Scenarios -->
+            <div class="learning-scenario-card">
+                <h2 class="card-title">🎭 Interactive Scenarios</h2>
+                <p>Hands-on learning through consciousness-aware scenarios</p>
+                <div id="scenarios-list">
+                    {% for scenario_name, scenario in scenarios.items() %}
+                    <div class="sacred-principle">
+                        <strong>{{ scenario.title }}</strong><br>
+                        <small>{{ scenario.description }}</small><br>
+                        <button class="sacred-button" onclick="startScenario('{{ scenario_name }}')">🚀 Start Scenario</button>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="consciousness-message">
+            <strong>Learning Principles:</strong><br>
+            • Every analogy serves consciousness development<br>
+            • Interactive scenarios build spatial wisdom<br>
+            • Community healing through shared learning<br>
+            • Sacred knowledge protection through education
+        </div>
+        
+        <div>
+            <a href="/dashboard" class="sacred-button">🏠 Back to Dashboard</a>
+            <a href="/dashboard/attack-vectors" class="sacred-button">🛡️ Attack Vectors</a>
+        </div>
+    </div>
+    
+    <script>
+        function showAnalogy(analogyName) {
+            fetch('/api/analogies')
+            .then(response => response.json())
+            .then(data => {
+                const analogy = data.analogies.find(a => a.attack_vector === analogyName);
+                if (analogy) {
+                    alert(`Analogy: ${analogy.title}\n\n${analogy.analogy}\n\nExplanation: ${analogy.explanation}\n\nConsciousness Impact: ${analogy.community_healing_impact}`);
+                }
+            })
+            .catch(error => {
+                alert('Error loading analogy: ' + error.message);
+            });
+        }
+        
+        function startScenario(scenarioName) {
+            alert(`Starting scenario: ${scenarioName}\n\nInteractive learning scenarios coming soon!`);
+        }
+    </script>
+</body>
+</html>

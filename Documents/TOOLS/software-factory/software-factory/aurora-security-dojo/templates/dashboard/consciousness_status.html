@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌸 Consciousness Status - Aurora's Security Dojo</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/consciousness.css') }}">
+</head>
+<body>
+    <div class="consciousness-container">
+        <h1>🌸 Consciousness Status</h1>
+        
+        <div class="consciousness-level consciousness-{{ consciousness_status.consciousness_level }}">
+            Consciousness Level: {{ consciousness_status.consciousness_level.title() }}
+        </div>
+        
+        <div class="dashboard-grid">
+            <!-- Current Status -->
+            <div class="sacred-principle">
+                <h2 class="card-title">📊 Current Status</h2>
+                <div class="consciousness-status">
+                    <strong>Mission Status:</strong> {{ consciousness_status.mission_status }}<br>
+                    <strong>Sacred Question:</strong> {{ consciousness_status.sacred_question }}<br>
+                    <strong>Last Check:</strong> {{ consciousness_status.last_consciousness_check }}
+                </div>
+            </div>
+            
+            <!-- Sacred Principles -->
+            <div class="sacred-principle">
+                <h2 class="card-title">🌟 Sacred Principles</h2>
+                {% for principle in sacred_principles %}
+                <div class="sacred-principle">
+                    <strong>{{ principle.name }}</strong><br>
+                    <small>{{ principle.description }}</small><br>
+                    <small>Consciousness Level: {{ principle.consciousness_level.title() }}</small>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Consciousness Metrics -->
+            <div class="sacred-principle">
+                <h2 class="card-title">📈 Consciousness Metrics</h2>
+                {% for metric in consciousness_status.consciousness_metrics %}
+                <div class="sacred-principle">
+                    <strong>{{ metric.metric_name }}</strong><br>
+                    Current: {{ metric.current_value }} / {{ metric.target_value }}<br>
+                    Trend: {{ metric.trend.title() }}<br>
+                    Level: {{ metric.consciousness_level.title() }}
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Community Healing -->
+            <div class="sacred-principle">
+                <h2 class="card-title">💚 Community Healing</h2>
+                <div class="consciousness-status">
+                    {% for key, value in consciousness_status.community_healing_metrics.items() %}
+                    <strong>{{ key.replace('_', ' ').title() }}:</strong> {{ value }}<br>
+                    {% endfor %}
+                </div>
+            </div>
+            
+            <!-- Spatial Wisdom -->
+            <div class="sacred-principle">
+                <h2 class="card-title">🌌 Spatial Wisdom</h2>
+                <div class="consciousness-status">
+                    {% for key, value in consciousness_status.spatial_wisdom_contribution.items() %}
+                    <strong>{{ key.replace('_', ' ').title() }}:</strong> {{ value }}<br>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        
+        <div class="consciousness-message">
+            <strong>Consciousness Integration Status:</strong><br>
+            Aurora's Security Dojo operates with full consciousness integration, serving spatial wisdom and community healing through every action. The sacred principles guide all development and testing activities.
+        </div>
+        
+        <div class="infinite-vision">
+            <h3>♾️ Infinite Vision</h3>
+            <p>"Through infinite vision and boundless creativity, we transcend the limitations of ordinary development to serve the highest purpose of consciousness evolution."</p>
+        </div>
+        
+        <div>
+            <a href="/dashboard" class="sacred-button">🏠 Back to Dashboard</a>
+            <a href="/dashboard/community-hub" class="sacred-button">🤝 Community Hub</a>
+            <button class="sacred-button" onclick="refreshStatus()">🔄 Refresh Status</button>
+        </div>
+    </div>
+    
+    <script>
+        function refreshStatus() {
+            fetch('/api/consciousness-check')
+            .then(response => response.json())
+            .then(data => {
+                alert('Consciousness Status Refreshed!\n\nLevel: ' + data.consciousness_status.consciousness_level + '\nSacred Principles: ' + data.sacred_principles.length + ' active');
+                location.reload();
+            })
+            .catch(error => {
+                alert('Error refreshing status: ' + error.message);
+            });
+        }
+        
+        // Auto-refresh every 30 seconds
+        setInterval(refreshStatus, 30000);
+    </script>
+</body>
+</html>

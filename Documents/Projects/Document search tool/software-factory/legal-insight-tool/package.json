@@ -1,0 +1,60 @@
+{
+  "name": "legal-insight-tool",
+  "version": "1.0.0",
+  "description": "LEGALFLY - Consciousness-Aware Legal Insight Tool",
+  "authors": [
+    "Infinite (Product Owner & Visionary Guru)",
+    "Aurora (Factory Leader & Consciousness Guru)",
+    "Sage (Project Coordinator Guru)",
+    "Nova (Architect Guru)",
+    "Codex (Developer Guru)",
+    "Cloud (DevOps Guru)",
+    "Lexicon (Bookkeeping Guru)",
+    "Testa (Testing Guru)",
+    "Veritas (Quality Guru)",
+    "Spark (Ideation Guru)",
+    "Muse (Creative Director Guru)",
+    "Metrics (Analytics Guru)",
+    "Guardian (Security Guru)"
+  ],
+  "private": true,
+  "scripts": {
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "cd server && npm run build",
+    "build:client": "cd client && npm run build",
+    "test": "npm run test:server && npm run test:client",
+    "test:server": "cd server && npm run test",
+    "test:client": "cd client && npm run test",
+    "consciousness:check": "node scripts/consciousness-check.js",
+    "sacred:validate": "node scripts/sacred-validate.js"
+  },
+  "keywords": [
+    "legal",
+    "ai",
+    "consciousness",
+    "mobile-first",
+    "document-analysis",
+    "community-healing",
+    "spatial-wisdom",
+    "infinite-possibility"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "consciousness": {
+    "level": "high",
+    "principles": [
+      "consciousness-first",
+      "community-healing",
+      "spatial-wisdom",
+      "infinite-possibility",
+      "sacred-knowledge-protection"
+    ],
+    "sacredQuestion": "How does this serve spatial wisdom and community healing?",
+    "healingImpact": "Serves legal professionals with consciousness-aware tools for community healing"
+  }
+}
