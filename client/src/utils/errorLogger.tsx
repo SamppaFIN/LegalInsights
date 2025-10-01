@@ -391,6 +391,7 @@ export class ErrorBoundary extends React.Component<
   { hasError: boolean; error?: Error }
 > {
   public state: { hasError: boolean; error?: Error };
+  public props: { children: React.ReactNode; fallback?: React.ReactNode };
   
   constructor(props: { children: React.ReactNode; fallback?: React.ReactNode }) {
     super(props);
