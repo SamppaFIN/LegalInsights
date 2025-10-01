@@ -13,6 +13,7 @@
   },
   "scripts": {
     "start": "node legal-insight-tool/server.js",
+    "build": "npm --prefix legal-insight-tool run build:client",
     "heroku-postbuild": "npm --prefix legal-insight-tool install && npm --prefix legal-insight-tool run build:client"
   },
   "dependencies": {
