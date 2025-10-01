@@ -389,7 +389,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
                 borderRadius: '12px',
                 padding: '1rem',
                 marginBottom: '1rem'
-              }}
+              } as React.CSSProperties}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3 }}
@@ -435,7 +435,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
               borderRadius: '12px',
               padding: '1.5rem',
               textAlign: 'center'
-            }}
+            } as React.CSSProperties}
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.3 }}
@@ -469,7 +469,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
             alignItems: 'center',
             justifyContent: 'center',
             gap: '0.5rem'
-          }}
+          } as React.CSSProperties}
           whileHover={newCaseData.name.trim() && !isCreating ? { scale: 1.05 } : {}}
           whileTap={newCaseData.name.trim() && !isCreating ? { scale: 0.95 } : {}}
         >
@@ -482,7 +482,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
                   border: '2px solid white',
                   borderTop: '2px solid transparent',
                   borderRadius: '50%'
-                }}
+                } as React.CSSProperties}
                 animate={{ rotate: 360 }}
                 transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
               />
