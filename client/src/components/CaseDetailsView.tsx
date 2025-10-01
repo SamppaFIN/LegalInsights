@@ -515,7 +515,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
         justifyContent: 'center',
         alignItems: 'center',
         padding: '2rem'
-      }}
+      } as React.CSSProperties}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
