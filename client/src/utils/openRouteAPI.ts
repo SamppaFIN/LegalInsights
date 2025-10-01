@@ -131,6 +131,7 @@ export class OpenRouteAPI {
     if (envBase) this.baseURL = envBase;
 
     // Debug (masked) so we can verify detection without leaking the secret
+    // Trigger rebuild to pick up REACT_APP_OPENROUTER_API_KEY from Heroku config vars
     try {
       const masked = this.apiKey ? `${this.apiKey.slice(0, 6)}…${this.apiKey.slice(-4)}` : 'MISSING';
       // eslint-disable-next-line no-console
