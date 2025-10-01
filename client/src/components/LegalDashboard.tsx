@@ -660,7 +660,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                 boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 position: 'relative',
                 overflow: 'hidden'
-              }}
+              } as React.CSSProperties}
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
@@ -682,10 +682,10 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                   bottom: 0,
                   background: `radial-gradient(circle at 20% 20%, ${getStatusColor(case_.status)}10 0%, transparent 50%)`,
                   pointerEvents: 'none'
-                }}
+                } as React.CSSProperties}
                 animate={{
                   background: `radial-gradient(circle at ${20 + (index * 10) % 80}% ${20 + (index * 15) % 80}%, ${getStatusColor(case_.status)}15 0%, transparent 50%)`
-                }}
+                } as React.CSSProperties}
                 transition={{ duration: 3, repeat: Infinity }}
               />
 
@@ -694,7 +694,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                   style={{
                     fontSize: '2rem',
                     marginTop: '0.2rem'
-                  }}
+                  } as React.CSSProperties}
                   animate={{ 
                     scale: [1, 1.1, 1],
                     rotate: [0, 5, -5, 0]
@@ -730,11 +730,11 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         borderRadius: '10px',
                         textTransform: 'uppercase',
                         fontWeight: 500
-                      }}
+                      } as React.CSSProperties}
                       animate={{ 
                         scale: [1, 1.05, 1],
                         backgroundColor: [getPriorityColor(case_.priority), colors.consciousness, getPriorityColor(case_.priority)]
-                      }}
+                      } as React.CSSProperties}
                       transition={{ duration: 3, repeat: Infinity }}
                     >
                       {case_.priority}
@@ -749,7 +749,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         borderRadius: '10px',
                         textTransform: 'uppercase',
                         fontWeight: 500
-                      }}
+                      } as React.CSSProperties}
                       animate={{ 
                         scale: [1, 1.05, 1]
                       }}
@@ -797,7 +797,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.consciousness
-                      }}
+                      } as React.CSSProperties}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity }}
                     >
@@ -812,7 +812,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.healing
-                      }}
+                      } as React.CSSProperties}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                     >
@@ -827,7 +827,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.spatial
-                      }}
+                      } as React.CSSProperties}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 1 }}
                     >
@@ -842,7 +842,7 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                         gap: '0.3rem',
                         fontSize: '0.8rem',
                         color: colors.infinite
-                      }}
+                      } as React.CSSProperties}
                       animate={{ opacity: [0.7, 1, 0.7] }}
                       transition={{ duration: 2, repeat: Infinity, delay: 1.5 }}
                     >
