@@ -79,7 +79,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
         input.type = 'file';
         input.multiple = true;
         input.onchange = (e) => {
-          const files = Array.from((e.target as HTMLInputElement).files || []);
+          const files = Array.from((e.target as HTMLInputElement).files || []) as File[];
           setSelectedFiles(files);
         };
         input.click();

@@ -198,7 +198,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
   };
 
   const handleLocalFilesSelected = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = Array.from(e.target.files || []);
+    const files = Array.from(e.target.files || []) as File[];
     for (const file of files) {
       try {
         const doc = await localFileSystem.addDocumentToCase(legalCase.id, file);
