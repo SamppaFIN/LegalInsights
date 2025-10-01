@@ -124,7 +124,11 @@ export const BionicText: React.FC<BionicTextProps> = ({
   };
 
   useEffect(() => {
-    const converted = convertToBionicReading(children, intensity);
+    // Ensure intensity is a valid value
+    const validIntensity = ['light', 'medium', 'strong'].includes(intensity) 
+      ? intensity as 'light' | 'medium' | 'strong' 
+      : 'medium';
+    const converted = convertToBionicReading(children, validIntensity);
     setBionicText(converted);
   }, [children, intensity]);
 
