@@ -867,11 +867,11 @@ export const LegalDashboard: React.FC<LegalDashboardProps> = ({
                           padding: '0.3rem 0.6rem',
                           borderRadius: '12px',
                           border: `1px solid ${colors.infinite}40`
-                        }}
+                        } as React.CSSProperties}
                         animate={{ 
                           scale: [1, 1.05, 1],
                           backgroundColor: [`${colors.infinite}20`, `${colors.infinite}30`, `${colors.infinite}20`]
-                        }}
+                        } as React.CSSProperties}
                         transition={{ duration: 3, repeat: Infinity, delay: idx * 0.5 }}
                       >
                         {possibility}
