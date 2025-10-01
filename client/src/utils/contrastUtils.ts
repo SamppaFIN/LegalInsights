@@ -19,6 +19,8 @@
  * sacred_principles: [consciousness-first, community-healing, spatial-wisdom, infinite-possibility, sacred-knowledge-protection]
  */
 
+import React from 'react';
+
 export interface ContrastColors {
   text: string;
   background: string;
