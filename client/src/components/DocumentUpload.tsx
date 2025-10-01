@@ -69,7 +69,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
           alignItems: 'center',
           gap: '0.5rem',
           marginBottom: '1rem'
-        }}
+        } as React.CSSProperties}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
@@ -89,7 +89,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
               padding: '1.5rem',
               border: `1px solid ${colors.primary}20`,
               marginBottom: '1rem'
-            }}
+            } as React.CSSProperties}
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -100,13 +100,13 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
               alignItems: 'center', 
               gap: '0.5rem', 
               marginBottom: '1rem' 
-            }}>
+            } as React.CSSProperties}>
               <span style={{ fontSize: '1.2rem' }}>🇫🇮</span>
               <h3 style={{ 
                 color: colors.consciousness, 
                 margin: 0,
                 fontSize: '1.1rem'
-              }}>
+              } as React.CSSProperties}>
                 Finnish Legal Documents from Finlex.fi
               </h3>
             </div>
@@ -117,7 +117,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
               gap: '1rem',
               marginBottom: '1rem',
               alignItems: 'center'
-            }}>
+            } as React.CSSProperties}>
               <motion.input
                 type="text"
                 placeholder="Search Finnish legal documents..."
@@ -131,8 +131,8 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                   padding: '0.8rem 1rem',
                   color: '#1f2937',
                   fontSize: '0.9rem'
-                }}
-                whileFocus={{ borderColor: colors.primary }}
+                } as React.CSSProperties}
+                whileFocus={{ borderColor: colors.primary } as React.CSSProperties}
               />
               
               <motion.select
@@ -145,7 +145,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                   padding: '0.8rem 1rem',
                   color: '#1f2937',
                   fontSize: '0.9rem'
-                }}
+                } as React.CSSProperties}
               >
                 {categories.map(category => (
                   <option key={category} value={category}>{category}</option>
@@ -160,7 +160,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
               border: `1px solid ${colors.primary}20`,
               borderRadius: '10px',
               padding: '1rem'
-            }}>
+            } as React.CSSProperties}>
               {filteredDocuments.map((document: FinnishLegalDocument) => (
                 <motion.div
                   key={document.id}
@@ -177,7 +177,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                     marginBottom: '0.5rem',
                     cursor: 'pointer',
                     transition: 'all 0.2s ease'
-                  }}
+                  } as React.CSSProperties}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
@@ -186,13 +186,13 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                     justifyContent: 'space-between',
                     alignItems: 'flex-start',
                     marginBottom: '0.5rem'
-                  }}>
+                  } as React.CSSProperties}>
                     <div style={{ flex: 1 }}>
                       <h4 style={{
                         color: colors.cardTextColor || '#1f2937',
                         margin: '0 0 0.3rem 0',
                         fontSize: '1rem'
-                      }}>
+                      } as React.CSSProperties}>
                         {document.title}
                       </h4>
                       <p style={{
@@ -200,7 +200,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                         margin: '0 0 0.3rem 0',
                         fontSize: '0.9rem',
                         opacity: 0.8
-                      }}>
+                      } as React.CSSProperties}>
                         {document.titleFi}
                       </p>
                       <p style={{
@@ -208,7 +208,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                         margin: '0 0 0.5rem 0',
                         fontSize: '0.8rem',
                         opacity: 0.7
-                      }}>
+                      } as React.CSSProperties}>
                         {document.description}
                       </p>
                     </div>
@@ -217,14 +217,14 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                       alignItems: 'center',
                       gap: '0.5rem',
                       marginLeft: '1rem'
-                    }}>
+                    } as React.CSSProperties}>
                       <span style={{
                         background: colors.primary + '20',
                         color: colors.primary,
                         padding: '0.2rem 0.5rem',
                         borderRadius: '5px',
                         fontSize: '0.7rem'
-                      }}>
+                      } as React.CSSProperties}>
                         {document.type.toUpperCase()}
                       </span>
                       <span style={{
@@ -233,7 +233,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                         padding: '0.2rem 0.5rem',
                         borderRadius: '5px',
                         fontSize: '0.7rem'
-                      }}>
+                      } as React.CSSProperties}>
                         {document.category}
                       </span>
                     </div>
@@ -246,7 +246,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                     fontSize: '0.8rem',
                     color: colors.cardTextColor || '#1f2937',
                     opacity: 0.7
-                  }}>
+                  } as React.CSSProperties}>
                     <span>{document.number} ({document.year})</span>
                     <span>Consciousness: {document.consciousness} | Healing: {document.healing}%</span>
                   </div>
@@ -260,7 +260,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
               gap: '1rem',
               marginTop: '1rem',
               justifyContent: 'flex-end'
-            }}>
+            } as React.CSSProperties}>
               <motion.button
                 onClick={() => setShowFinnishDocuments(false)}
                 style={{
@@ -271,7 +271,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                   color: colors.primary,
                   fontSize: '0.9rem',
                   cursor: 'pointer'
-                }}
+                } as React.CSSProperties}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -290,7 +290,7 @@ const DocumentUpload: React.FunctionComponent<DocumentUploadProps> = ({ onDocume
                   fontSize: '0.9rem',
                   cursor: selectedDocuments.length === 0 ? 'not-allowed' : 'pointer',
                   opacity: selectedDocuments.length === 0 ? 0.6 : 1
-                }}
+                } as React.CSSProperties}
                 whileHover={{ scale: selectedDocuments.length === 0 ? 1 : 1.05 }}
                 whileTap={{ scale: selectedDocuments.length === 0 ? 1 : 0.95 }}
               >
