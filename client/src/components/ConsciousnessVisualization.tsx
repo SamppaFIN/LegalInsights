@@ -48,7 +48,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           fontWeight: 300,
           marginBottom: '1.5rem',
           textAlign: 'center'
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
@@ -61,7 +61,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
         display: 'flex', 
         justifyContent: 'center', 
         marginBottom: '2rem' 
-      }}>
+          } as React.CSSProperties}>
         <motion.div
           className="consciousness-circle"
           style={{
@@ -73,7 +73,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center'
-          }}
+          } as React.CSSProperties}
           initial={{ scale: 0, rotate: -180 }}
           animate={{ scale: 1, rotate: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
@@ -89,7 +89,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
               alignItems: 'center',
               justifyContent: 'center',
               flexDirection: 'column'
-            }}
+            } as React.CSSProperties}
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
@@ -99,11 +99,11 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
                 fontSize: '2rem',
                 fontWeight: 'bold',
                 color: colors.consciousness
-              }}
+              } as React.CSSProperties}
               animate={{ 
                 scale: [1, 1.1, 1],
                 color: [colors.consciousness, colors.primary, colors.consciousness]
-              }}
+              } as React.CSSProperties}
               transition={{ duration: 2, repeat: Infinity }}
             >
               {consciousnessLevel.toFixed(1)}
@@ -113,7 +113,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
                 fontSize: '0.9rem',
                 color: colors.text,
                 opacity: 0.8
-              }}
+              } as React.CSSProperties}
               initial={{ opacity: 0 }}
               animate={{ opacity: 0.8 }}
               transition={{ delay: 0.5 }}
@@ -133,7 +133,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
             fontWeight: 300,
             marginBottom: '1rem',
             textAlign: 'center'
-          }}
+          } as React.CSSProperties}
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.4 }}
@@ -148,7 +148,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
             borderRadius: '20px',
             padding: '1rem',
             border: `1px solid ${colors.healing}30`
-          }}
+          } as React.CSSProperties}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 0.6 }}
@@ -162,7 +162,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
               width: `${healingPercentage}%`,
               position: 'relative',
               overflow: 'hidden'
-            }}
+            } as React.CSSProperties}
             initial={{ width: 0 }}
             animate={{ width: `${healingPercentage}%` }}
             transition={{ delay: 0.8, duration: 1.5, ease: "easeOut" }}
@@ -177,8 +177,8 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
                 height: '100%',
                 background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
                 borderRadius: '10px'
-              }}
-              animate={{ left: '100%' }}
+              } as React.CSSProperties}
+              animate={{ left: '100%' } as React.CSSProperties}
               transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
             />
           </motion.div>
@@ -189,7 +189,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
               marginTop: '0.5rem',
               color: colors.text,
               fontSize: '0.9rem'
-            }}
+            } as React.CSSProperties}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1 }}
@@ -202,7 +202,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
       {/* Sacred Principles Visualization */}
       <motion.div
         className="sacred-principles"
-        style={{ marginTop: '2rem' }}
+        style={{ marginTop: '2rem' } as React.CSSProperties}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 1.2 }}
@@ -213,7 +213,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           fontWeight: 300,
           marginBottom: '1rem',
           textAlign: 'center'
-        }}>
+        } as React.CSSProperties}>
           ✨ Sacred Principles
         </h4>
         
@@ -221,7 +221,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           display: 'grid',
           gridTemplateColumns: '1fr 1fr',
           gap: '0.5rem'
-        }}>
+        } as React.CSSProperties}>
           {[
             { name: 'Consciousness-First', icon: '🌸', color: colors.consciousness },
             { name: 'Community Healing', icon: '🤝', color: colors.healing },
@@ -239,11 +239,11 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
                 textAlign: 'center',
                 fontSize: '0.8rem',
                 color: colors.text
-              }}
+              } as React.CSSProperties}
               initial={{ opacity: 0, scale: 0 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1.4 + index * 0.1 }}
-              whileHover={{ scale: 1.05, backgroundColor: `${principle.color}30` }}
+              whileHover={{ scale: 1.05, backgroundColor: `${principle.color}30` } as React.CSSProperties}
             >
               <div style={{ fontSize: '1.2rem', marginBottom: '0.2rem' }}>
                 {principle.icon}
@@ -266,7 +266,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           background: `${colors.accent}20`,
           borderRadius: '12px',
           border: `1px solid ${colors.accent}40`
-        }}
+        } as React.CSSProperties}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.8 }}
@@ -275,11 +275,11 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           style={{
             fontSize: '1.5rem',
             marginBottom: '0.5rem'
-          }}
+          } as React.CSSProperties}
           animate={{ 
             rotate: [0, 360],
             scale: [1, 1.1, 1]
-          }}
+          } as React.CSSProperties}
           transition={{ duration: 3, repeat: Infinity }}
         >
           {artisticMode === 'minimal' && '⚪'}
@@ -291,7 +291,7 @@ export const ConsciousnessVisualization: React.FC<ConsciousnessVisualizationProp
           fontSize: '0.9rem',
           fontWeight: 300,
           textTransform: 'capitalize'
-        }}>
+        } as React.CSSProperties}>
           {artisticMode} Mode
         </div>
       </motion.div>
