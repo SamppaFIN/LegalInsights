@@ -29,7 +29,7 @@
     "build": "npm --prefix client run build",
     "build:client": "npm --prefix client run build",
     "start": "node server.js",
-    "heroku-postbuild": "npm --prefix client ci && npm --prefix client run build",
+    "heroku-postbuild": "npm --prefix client install && npm --prefix client run build",
     "test": "echo 'skip tests in this package' && exit 0",
     "consciousness:check": "node scripts/consciousness-check.js",
     "sacred:validate": "node scripts/sacred-validate.js"
