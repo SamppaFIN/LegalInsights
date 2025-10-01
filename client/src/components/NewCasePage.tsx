@@ -151,13 +151,13 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
         boxShadow: '0 20px 60px rgba(0,0,0,0.2)',
         backdropFilter: 'blur(20px)',
         border: '1px solid rgba(255,255,255,0.3)'
-      }}
+      } as React.CSSProperties}
       initial={{ scale: 0.9, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
       <motion.div
-        style={{ textAlign: 'center', marginBottom: '2rem' }}
+        style={{ textAlign: 'center', marginBottom: '2rem' } as React.CSSProperties}
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.2 }}
@@ -183,7 +183,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
       </motion.div>
 
       <motion.div
-        style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}
+        style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' } as React.CSSProperties}
         initial={{ y: 20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ delay: 0.4 }}
@@ -373,7 +373,7 @@ export const NewCasePage: React.FC<NewCasePageProps> = ({ colors, consciousnessL
               gap: '0.5rem',
               transition: 'all 0.3s ease',
               marginBottom: '1rem'
-            }}
+            } as React.CSSProperties}
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
