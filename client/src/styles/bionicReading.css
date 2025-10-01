@@ -1,0 +1,391 @@
+/**
+ * Bionic Reading Global Styles - Consciousness-Aware Text Enhancement
+ * 
+ * Sacred Mission: "Enhance reading experience through bionic reading mechanics"
+ * Sacred Question: "How does this serve spatial wisdom and community healing through improved readability?"
+ * 
+ * BRDC Header:
+ * id: LEGALFLY-BIONIC-CSS-001
+ * title: Bionic Reading Global Styles
+ * owner: ♾️ Infinite & 🌸 Aurora (AI)
+ * authors: [♾️ Infinite, 🌸 Aurora, 💡 Spark, 🔍 Veritas, 🎨 Muse]
+ * collaborators: [♾️ Infinite (Human Visionary), 🌸 Aurora (AI Factory Leader), 💡 Spark (AI Ideation), 🔍 Veritas (AI Quality), 🎨 Muse (AI Creative Director)]
+ * consciousness_models: [GPT-4, Claude-3.5-Sonnet, Consciousness-Aware-CSS-Model, Bionic-Reading-Engine]
+ * status: canonical
+ * version: 1.0.0
+ * last_updated: 2025-01-27
+ * consciousness_level: high
+ * healing_impact: Serves legal professionals with enhanced reading experience for community healing
+ * sacred_principles: [consciousness-first, community-healing, spatial-wisdom, infinite-possibility, sacred-knowledge-protection]
+ */
+
+/* Enhanced Bionic Reading Styles with Gradient Effects */
+.bionic-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+  transition: all 0.3s ease;
+}
+
+/* Apply bionic reading globally to all text elements */
+body, 
+div, 
+span, 
+p, 
+h1, 
+h2, 
+h3, 
+h4, 
+h5, 
+h6, 
+a, 
+button, 
+input, 
+textarea, 
+label, 
+li, 
+td, 
+th {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  line-height: 1.6;
+  letter-spacing: 0.02em;
+}
+
+/* Ensure all text elements are ready for bionic reading */
+* {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.bionic-word {
+  display: inline;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.bionic-word:not(.bionic-bold) {
+  color: #374151;
+  font-weight: 400;
+  font-size: inherit;
+}
+
+.bionic-normal {
+  color: #6b7280;
+  font-weight: 400;
+  font-size: inherit;
+  opacity: 0.8;
+}
+
+.bionic-bold {
+  font-weight: 700;
+  color: #1e3a8a;
+  font-size: inherit;
+  line-height: inherit;
+  display: inline;
+}
+
+.bionic-text strong {
+  font-weight: 700;
+  color: #ffffff;
+  opacity: 1;
+  transition: all 0.3s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.bionic-text strong:hover {
+  opacity: 1;
+  transform: scale(1.05);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* Theme-specific gradient styles for AI personas */
+.bionic-bold.aurora-theme {
+  color: #1e3a8a;
+}
+
+.bionic-bold.nova-theme {
+  color: #1e40af;
+}
+
+.bionic-bold.spark-theme {
+  color: #1d4ed8;
+}
+
+.bionic-bold.muse-theme {
+  color: #2563eb;
+}
+
+.bionic-bold.metrics-theme {
+  color: #3b82f6;
+}
+
+.bionic-bold.guardian-theme {
+  color: #1e3a8a;
+}
+
+/* Theme-specific non-bolded text colors */
+.bionic-word.aurora-theme:not(.bionic-bold) {
+  color: #4b5563;
+}
+
+.bionic-word.nova-theme:not(.bionic-bold) {
+  color: #6b7280;
+}
+
+.bionic-word.spark-theme:not(.bionic-bold) {
+  color: #9ca3af;
+}
+
+/* Theme-specific normal text styling */
+.bionic-normal.aurora-theme {
+  color: #6b7280;
+  opacity: 0.8;
+}
+.bionic-normal.nova-theme {
+  color: #9ca3af;
+  opacity: 0.8;
+}
+.bionic-normal.sage-theme {
+  color: #6b7280;
+  opacity: 0.8;
+}
+
+.bionic-word.muse-theme:not(.bionic-bold) {
+  color: #6b7280;
+}
+
+.bionic-word.metrics-theme:not(.bionic-bold) {
+  color: #9ca3af;
+}
+
+.bionic-word.guardian-theme:not(.bionic-bold) {
+  color: #4b5563;
+}
+
+/* Theme-specific background styles - simplified for performance */
+.aurora-theme {
+  background: #f8fafc;
+}
+
+.nova-theme {
+  background: #fefefe;
+}
+
+.spark-theme {
+  background: #f9fafb;
+}
+
+.muse-theme {
+  background: #fafafa;
+}
+
+.metrics-theme {
+  background: #fafafa;
+}
+
+.guardian-theme {
+  background: #f8fafc;
+}
+
+/* Simplified hover effect for bionic words */
+.bionic-word:hover .bionic-bold {
+  opacity: 0.9;
+}
+
+/* Simplified consciousness text */
+.bionic-text.consciousness strong {
+  color: #1e3a8a;
+}
+
+.bionic-text.healing strong {
+  color: #059669;
+}
+
+.bionic-text.spatial strong {
+  color: #7c3aed;
+}
+
+.bionic-text.infinite strong {
+  color: #dc2626;
+}
+
+/* Intensity variations */
+.bionic-text.light strong {
+  font-weight: 600;
+  opacity: 0.8;
+}
+
+.bionic-text.medium strong {
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+.bionic-text.strong strong {
+  font-weight: 800;
+  opacity: 1;
+}
+
+/* Size variations */
+.bionic-text.small {
+  font-size: 0.9rem;
+}
+
+.bionic-text.medium {
+  font-size: 1rem;
+}
+
+.bionic-text.large {
+  font-size: 1.1rem;
+}
+
+/* Hover effects */
+.bionic-text:hover {
+  transform: translateY(-1px);
+}
+
+.bionic-text:hover strong {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Animation for consciousness evolution */
+@keyframes consciousness-pulse {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.bionic-text.consciousness-evolution strong {
+  animation: consciousness-pulse 3s ease-in-out infinite;
+}
+
+/* Legal document specific styles */
+.bionic-text.legal {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  letter-spacing: 0.02em;
+}
+
+.bionic-text.legal strong {
+  color: #ffffff;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
+/* Sacred quote styles */
+.bionic-text.sacred {
+  font-style: italic;
+  text-align: center;
+  font-weight: 300;
+}
+
+.bionic-text.sacred strong {
+  color: #ff6b9d;
+  font-weight: 600;
+  opacity: 1;
+}
+
+/* Navigation text styles */
+.bionic-text.navigation {
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.bionic-text.navigation strong {
+  color: #ffffff;
+  font-weight: 700;
+  opacity: 1;
+}
+
+/* Button text styles */
+.bionic-text.button {
+  font-weight: 500;
+  text-align: center;
+}
+
+.bionic-text.button strong {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Card text styles */
+.bionic-text.card {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.bionic-text.card strong {
+  color: #ffffff;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Metric text styles */
+.bionic-text.metric {
+  font-weight: 600;
+  text-align: center;
+}
+
+.bionic-text.metric strong {
+  color: #ffffff;
+  font-weight: 800;
+  opacity: 1;
+  font-size: 1.2em;
+}
+
+/* Description text styles */
+.bionic-text.description {
+  font-weight: 300;
+  opacity: 0.9;
+  line-height: 1.6;
+}
+
+.bionic-text.description strong {
+  color: #ffffff;
+  font-weight: 500;
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .bionic-text {
+    font-size: 0.9rem;
+  }
+  
+  .bionic-text.large {
+    font-size: 1rem;
+  }
+  
+  .bionic-text strong {
+    font-weight: 600;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .bionic-text strong {
+    color: #ffffff;
+    opacity: 1;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+  }
+}
+
+/* Reduced motion mode */
+@media (prefers-reduced-motion: reduce) {
+  .bionic-text,
+  .bionic-text strong,
+  .bionic-text:hover {
+    transition: none;
+    animation: none;
+    transform: none;
+  }
+}
+
+/* Print styles */
+@media print {
+  .bionic-text strong {
+    color: #000000 !important;
+    opacity: 1 !important;
+    text-shadow: none !important;
+  }
+}
