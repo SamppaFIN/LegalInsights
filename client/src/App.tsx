@@ -669,7 +669,7 @@ function App() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-            }}
+            } as React.CSSProperties}
           >
             <ConsciousnessVisualization
               consciousnessLevel={consciousnessLevel}
@@ -704,7 +704,7 @@ function App() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-            }}
+            } as React.CSSProperties}
           >
             <WisdomPatterns
               spatialWisdom={spatialWisdom}
@@ -738,7 +738,7 @@ function App() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-            }}
+            } as React.CSSProperties}
           >
             <SacredGeometry
               patterns={['circle', 'triangle', 'square', 'spiral', 'wave', 'infinity', 'mandala', 'flower_of_life', 'metatron_cube']}
@@ -772,7 +772,7 @@ function App() {
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-            }}
+            } as React.CSSProperties}
           >
             <NewCasePage
               colors={{
