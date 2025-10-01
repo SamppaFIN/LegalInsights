@@ -533,7 +533,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
           overflowX: 'hidden',
           border: `1px solid ${colors.primary}40`,
           boxShadow: '0 20px 40px rgba(0, 0, 0, 0.3)'
-        }}
+        } as React.CSSProperties}
         initial={{ scale: 0.8, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         exit={{ scale: 0.8, opacity: 0 }}
@@ -549,7 +549,7 @@ export const CaseDetailsView: React.FunctionComponent<CaseDetailsViewProps> = ({
             marginBottom: '2rem',
             paddingBottom: '1rem',
             borderBottom: `1px solid ${colors.primary}20`
-          }}
+          } as React.CSSProperties}
         >
           <div>
             <motion.h2
