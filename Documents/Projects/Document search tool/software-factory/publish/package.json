@@ -12,6 +12,7 @@
     "heroku-postbuild": "npm run build:client"
   },
   "dependencies": {
+    "autonomous-factory": "file:..",
     "compression": "^1.7.4",
     "express": "^4.19.2",
     "helmet": "^7.1.0",
